@@ -13,7 +13,7 @@ import numpy as np
 #取得輸出層
 def get_output_layers(net):
     layer_names = net.getLayerNames()
-    output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+    output_layers = [layer_names[i - 1] for i in net.getUnconnectedOutLayers()]
     return output_layers
 
 #劃出預測
@@ -179,9 +179,9 @@ def detect():
     indices = cv2.dnn.NMSBoxes(boxes, confidences, conf_threshold, nms_threshold)
     returnx = 0
     for i in indices:
-        i = i[0]
+        # i = i[0]
         emotion = str(classes[class_ids[i]])
-        print(emotion)
+        # print(emotion)
         box = boxes[i]
         xxx = box[0]
         yyy = box[1]

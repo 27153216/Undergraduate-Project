@@ -1,0 +1,4 @@
+pypiwin32==223
+numpy==1.19.5
+opencv-python==3.4.18.65
+pygame==1.9.6
